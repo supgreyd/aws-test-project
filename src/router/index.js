@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LoginView from "@/views/LoginView.vue";
-import CurrencyView from "@/views/CurrencyView.vue";
-import СurrenciesView from "@/views/СurrenciesView.vue";
+import CourseView from "@/views/CourseView.vue";
+import CoursesView from "@/views/CoursesView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 
 const router = createRouter({
@@ -10,7 +10,7 @@ const router = createRouter({
     {
       path: "/",
       name: "main",
-      component: СurrenciesView,
+      component: CoursesView,
     },
     {
       path: "/login",
@@ -18,9 +18,9 @@ const router = createRouter({
       component: LoginView,
     },
     {
-      path: "/currency/:id",
-      name: "currency",
-      component: CurrencyView,
+      path: "/course/:id",
+      name: "course",
+      component: CourseView,
     },
     {
       path: "/:catchAll(.*)",

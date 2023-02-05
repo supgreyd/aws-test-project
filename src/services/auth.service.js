@@ -1,20 +1,16 @@
-import axios from "axios";
+import { axiosProvider } from "@/api/network-provider";
 
-const API_HOST = "https://service.lms.academweb.tech/api";
-
-class AuthService {
-  async login(user) {
-    const response = await axios.post(`${API_HOST}/login`, {
+export const authService = Object.freeze({
+  login: async (user) => {
+    const response = await axiosProvider.post("/login", {
       login: user.login.value,
       password: user.password.value,
     });
     localStorage.setItem("user", JSON.stringify(response.data));
-    return response.data;
-  }
-
-  logout() {
+    return response;
+  },
+  logout: () => {
+    axiosProvider.post("/logout");
     localStorage.removeItem("user");
-  }
-}
-
-export default new AuthService();
+  },
+});

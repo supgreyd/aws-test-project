@@ -9,7 +9,6 @@ defineProps({
 const emit = defineEmits(["submit"]);
 
 function submitHandler(e) {
-  console.log("submit");
   emit("submit", e);
 }
 

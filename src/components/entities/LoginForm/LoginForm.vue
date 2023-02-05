@@ -19,13 +19,13 @@ export default {
 
     const form = useForm({
       login: {
-        value: "teacher@akadasia.com",
+        value: "",
         validators: {
           required,
         },
       },
       password: {
-        value: "akadasia#dev#v3",
+        value: "",
         validators: {
           required,
           minLength: minLength(8),

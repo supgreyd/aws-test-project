@@ -19,6 +19,7 @@ export default {
 
     const user = computed(() => store.getters["auth/GET_USER"]);
 
+
     return { logout, user };
   },
 };
@@ -30,11 +31,11 @@ export default {
       <img src="src/assets/images/Logo.png" alt="logo" class="h-10" />
       <div class="flex items-center">
         <img
-          :src="user.avatar_url"
+          :src="user?.avatar_url"
           alt="avatar"
           class="w-10 h-10 rounded-full"
         />
-        <AppButton title="Logout" />
+        <AppButton title="Logout" @click="logout" />
       </div>
     </div>
   </header>
