@@ -19,7 +19,6 @@ export default {
 
     const user = computed(() => store.getters["auth/GET_USER"]);
 
-
     return { logout, user };
   },
 };
@@ -28,7 +27,7 @@ export default {
 <template>
   <header class="bg-gray-800 p-3">
     <div class="container xl mx-auto px-6 flex justify-between items-center">
-      <img src="src/assets/images/Logo.png" alt="logo" class="h-10" />
+      <img src="@/assets/images/Logo.png" alt="logo" class="h-10" />
       <div class="flex items-center">
         <img
           :src="user?.avatar_url"

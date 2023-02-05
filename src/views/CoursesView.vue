@@ -1,12 +1,9 @@
 <script>
-import HeaderPrivate from "@/components/entities/HeaderPrivate/HeaderPrivate.vue";
-
 export default {
-  components: { HeaderPrivate },
   setup() {},
 };
 </script>
 
 <template>
-  <HeaderPrivate />
+  <div>Courses page</div>
 </template>

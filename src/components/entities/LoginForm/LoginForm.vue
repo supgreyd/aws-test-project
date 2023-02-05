@@ -47,7 +47,11 @@ export default {
 <template>
   <AppForm title="Login" @submit="submit">
     <template #fields>
-      <AppInput v-model="form.login.value" placeholder="Enter name" label="Name" />
+      <AppInput
+        v-model="form.login.value"
+        placeholder="Enter name"
+        label="Name"
+      />
       <AppInput
         v-model="form.password.value"
         placeholder="Enter password"

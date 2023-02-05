@@ -11,7 +11,6 @@ const emit = defineEmits(["submit"]);
 function submitHandler(e) {
   emit("submit", e);
 }
-
 </script>
 
 <template>

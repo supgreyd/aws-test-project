@@ -1,3 +1,3 @@
 <template>
-  <div>Currency page</div>
+  <div>Course page</div>
 </template>
