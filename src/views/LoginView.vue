@@ -1,5 +1,5 @@
 <script setup>
-import LoginForm from '@/components/entities/LoginForm/LoginForm.vue';
+import LoginForm from "@/components/entities/LoginForm/LoginForm.vue";
 </script>
 
 <template>

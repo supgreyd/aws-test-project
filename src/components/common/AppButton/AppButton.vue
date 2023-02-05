@@ -4,11 +4,21 @@ defineProps({
     type: String,
     default: "",
   },
+  type: {
+    type: String,
+    default: "submit",
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
 <template>
-  <button class="base-btn">{{ title }}</button>
+  <button class="base-btn" :type="type" :disabled="disabled">
+    {{ title }}
+  </button>
 </template>
 
 <style scoped>

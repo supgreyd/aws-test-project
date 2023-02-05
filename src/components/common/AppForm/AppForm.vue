@@ -5,11 +5,19 @@ defineProps({
     default: "",
   },
 });
+
+const emit = defineEmits(["submit"]);
+
+function submitHandler(e) {
+  console.log("submit");
+  emit("submit", e);
+}
+
 </script>
 
 <template>
   <div class="base-form">
-    <form class="space-y-6" action="#">
+    <form class="space-y-6" action="#" @submit.prevent="submitHandler($event)">
       <h5 class="base-form-title">{{ title }}</h5>
       <slot name="fields" />
       <slot name="actions" />

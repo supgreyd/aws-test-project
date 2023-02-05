@@ -1,3 +1,12 @@
+<script>
+import HeaderPrivate from "@/components/entities/HeaderPrivate/HeaderPrivate.vue";
+
+export default {
+  components: { HeaderPrivate },
+  setup() {},
+};
+</script>
+
 <template>
-  <div>Curerencies list page</div>
+  <HeaderPrivate />
 </template>
