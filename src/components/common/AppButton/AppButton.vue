@@ -1,18 +1,23 @@
-<script setup>
-defineProps({
-  title: {
-    type: String,
-    default: "",
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
+    type: {
+      type: String,
+      default: "submit",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
   },
-  type: {
-    type: String,
-    default: "submit",
+  setup(props) {
+    return { ...props };
   },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
-});
+};
 </script>
 
 <template>

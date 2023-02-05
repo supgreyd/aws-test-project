@@ -1,9 +1,11 @@
 <script>
+import CoursesList from "@/components/entities/CoursesList/CoursesList.vue";
+
 export default {
-  setup() {},
+  components: { CoursesList },
 };
 </script>
 
 <template>
-  <div>Courses page</div>
+  <CoursesList />
 </template>
