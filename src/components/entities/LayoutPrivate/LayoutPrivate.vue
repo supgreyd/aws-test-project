@@ -12,7 +12,9 @@ export default {
       <HeaderPrivate />
     </template>
     <template #main>
-      <RouterView />
+      <main class="container xl mx-auto">
+        <RouterView />
+      </main>
     </template>
   </AppLayout>
 </template>

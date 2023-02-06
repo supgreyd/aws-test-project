@@ -1,16 +1,19 @@
-<script setup>
-defineProps({
-  title: {
-    type: String,
-    default: "",
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
   },
-});
-
-const emit = defineEmits(["submit"]);
-
-function submitHandler(e) {
-  emit("submit", e);
-}
+  emits: ["submit"],
+  setup(props, { emit }) {
+    function submitHandler(e) {
+      emit("submit", e);
+    }
+    return { ...props, submitHandler };
+  },
+};
 </script>
 
 <template>

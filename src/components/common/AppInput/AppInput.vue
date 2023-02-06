@@ -1,25 +1,27 @@
-<script setup>
-
-defineProps({
-  placeholder: {
-    type: String,
-    default: "Enter text",
+<script>
+export default {
+  props: {
+    placeholder: {
+      type: String,
+      default: "Enter text",
+    },
+    label: {
+      type: String,
+      default: "",
+    },
+    modelValue: {
+      type: String,
+      default: "",
+    },
   },
-  label: {
-    type: String,
-    default: "",
+  emits: ["update:modelValue"],
+  setup(props, { emit }) {
+    function inputHandler(e) {
+      emit("update:modelValue", e.target.value);
+    }
+    return { ...props, inputHandler };
   },
-  modelValue: {
-    type: String,
-    default: "",
-  },
-});
-
-const emit = defineEmits(["update:modelValue"]);
-
-function inputHandler(e) {
-  emit("update:modelValue", e.target.value);
-}
+};
 </script>
 
 <template>

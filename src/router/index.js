@@ -1,8 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LoginView from "@/views/LoginView.vue";
-import CourseView from "@/views/CourseView.vue";
-import CoursesView from "@/views/CoursesView.vue";
-import NotFoundView from "@/views/NotFoundView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,7 +6,7 @@ const router = createRouter({
     {
       path: "/",
       name: "main",
-      component: CoursesView,
+      component: () => import("@/views/CoursesView.vue"),
       meta: {
         layout: "LayoutPrivate",
       },
@@ -18,7 +14,7 @@ const router = createRouter({
     {
       path: "/login",
       name: "login",
-      component: LoginView,
+      component: () => import("@/views/LoginView.vue"),
       meta: {
         layout: "LayoutPublic",
       },
@@ -26,14 +22,14 @@ const router = createRouter({
     {
       path: "/course/:id",
       name: "course",
-      component: CourseView,
+      component: () => import("@/views/CourseView.vue"),
       meta: {
         layout: "LayoutPrivate",
       },
     },
     {
       path: "/:catchAll(.*)",
-      component: NotFoundView,
+      component: () => import("@/views/NotFoundView.vue"),
       meta: {
         layout: "LayoutPublic",
       },

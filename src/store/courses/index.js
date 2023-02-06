@@ -11,8 +11,8 @@ export const courses = {
     fetchCourses({ commit }) {
       return cousrseService.courses().then(
         (courses) => {
-          commit("fetchSuccess", courses);
-          return Promise.resolve(courses);
+          commit("fetchSuccess", courses.data);
+          return Promise.resolve(courses.data);
         },
         (error) => {
           commit("fetchFailure");
@@ -24,7 +24,7 @@ export const courses = {
 
   mutations: {
     fetchSuccess(state, courses) {
-      state.courses = courses;
+      state.courses = courses.data;
     },
     fetchFeilure(state) {
       state.courses = [];

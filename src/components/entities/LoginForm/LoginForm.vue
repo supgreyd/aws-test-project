@@ -3,7 +3,7 @@ import AppForm from "@/components/common/AppForm/AppForm.vue";
 import AppInput from "@/components/common/AppInput/AppInput.vue";
 import AppButton from "@/components/common/AppButton/AppButton.vue";
 
-import { useForm } from "@/hooks/useForm";
+import { useForm } from "@/composition/useForm";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 
@@ -33,10 +33,9 @@ export default {
       },
     });
 
-    const submit = () => {
-      store.dispatch("auth/login", form).then(() => {
-        router.push("/");
-      });
+    const submit = async () => {
+      await store.dispatch("auth/login", form);
+      router.push("/");
     };
 
     return { form, submit };
@@ -63,5 +62,3 @@ export default {
     </template>
   </AppForm>
 </template>
-
-<style scoped></style>
