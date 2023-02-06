@@ -13,9 +13,7 @@ export default {
     const courseId = route.params.id;
 
     onMounted(() => {
-      store
-        .dispatch("courses/fetchCourse", courseId)
-        .then((res) => console.log({ res }));
+      store.dispatch("courses/fetchCourse", courseId);
     });
 
     const course = computed(() => store.getters["courses/GET_COURSE"]);

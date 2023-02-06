@@ -13,7 +13,9 @@ export default {
     </template>
     <template #main>
       <main class="container xl mx-auto">
+      <KeepAlive include="/">
         <RouterView />
+      </KeepAlive>
       </main>
     </template>
   </AppLayout>

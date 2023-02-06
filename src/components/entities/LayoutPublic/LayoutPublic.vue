@@ -8,7 +8,9 @@ export default {
 <template>
   <AppLayout>
     <template #main>
-      <RouterView />
+      <main class="flex items-center justify-center h-screen">
+        <RouterView />
+      </main>
     </template>
   </AppLayout>
 </template>

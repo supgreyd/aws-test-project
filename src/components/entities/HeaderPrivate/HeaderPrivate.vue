@@ -30,13 +30,15 @@ export default {
 </script>
 
 <template>
-  <header class="bg-gray-800 p-3">
+  <header class="bg-slate-200 p-3">
     <div class="container xl mx-auto px-6 flex justify-between items-center">
-      <img src="@/assets/images/Logo.png" alt="logo" class="h-10" />
-      <div v-if="displayReturnBtn" class="flex items-center">
-        <AppButton title="Return" @click="goBack" />
+      <div class="flex gap-2">
+        <img src="@/assets/images/Logo.png" alt="logo" class="h-10" />
+        <div v-if="displayReturnBtn" class="flex items-center">
+          <AppButton title="Return" @click="goBack" />
+        </div>
       </div>
-      <div class="flex">
+      <div class="flex gap-2">
         <img
           :src="user?.avatar_url"
           alt="avatar"

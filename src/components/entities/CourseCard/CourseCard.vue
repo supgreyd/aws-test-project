@@ -24,7 +24,7 @@ export default {
 
 <template>
   <AppListItem class="bg-white shadow-lg p-6 mt-4 flex">
-    <div class="w-1/3 h-auto object-cover">
+    <div class="flex justify-center w-1/3 h-auto object-cover">
       <AppImage :srcPath="item.thumbnail_url" class="h-40" />
     </div>
     <div class="w-2/3 pl-6">

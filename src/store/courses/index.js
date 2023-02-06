@@ -9,8 +9,8 @@ export const courses = {
   },
 
   actions: {
-    fetchCourses({ commit }) {
-      return cousrseService.courses().then(
+    fetchCourses({ commit }, params) {
+      return cousrseService.courses(params).then(
         (courses) => {
           commit("fetchSuccess", courses.data);
           return Promise.resolve(courses.data);

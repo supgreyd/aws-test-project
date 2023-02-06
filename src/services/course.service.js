@@ -1,8 +1,8 @@
 import { axiosProvider } from "@/api/network-provider";
 
 export const cousrseService = Object.freeze({
-  courses: async () => {
-    const responce = await axiosProvider.get("/courses");
+  courses: async (params) => {
+    const responce = await axiosProvider.get("/courses", { params });
     return responce;
   },
   course: async (id) => {
