@@ -24,7 +24,7 @@ export default {
 <template>
   <div class="flex flex-wrap justify-center container mx-auto my-4">
     <div
-      class="relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 cursor-pointer"
+      :class="['pagination-item', { active: page === modelValue }]"
       v-for="(page, index) in numberOfPages"
       @click="setCurrentPage(page)"
       :key="index"
@@ -33,3 +33,12 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.pagination-item {
+  @apply relative inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20 cursor-pointer;
+}
+.active {
+  @apply bg-blue-700 text-white;
+}
+</style>

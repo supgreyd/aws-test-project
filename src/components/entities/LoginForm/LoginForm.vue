@@ -50,11 +50,18 @@ export default {
         v-model="form.login.value"
         placeholder="Enter name"
         label="Name"
+        id="form-login"
+        :invalid="!form.login.valid && form.login.touched"
+        @blur="form.login.touched = true"
       />
       <AppInput
         v-model="form.password.value"
         placeholder="Enter password"
         label="Password"
+        id="form-password"
+        type="password"
+        :invalid="!form.password.valid && form.password.touched"
+        @blur="form.password.touched = true"
       />
     </template>
     <template #actions>

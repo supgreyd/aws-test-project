@@ -4,6 +4,7 @@ export function useField(field) {
   const value = ref(field.value);
   const valid = ref(true);
   const errors = reactive({});
+  let touched = ref(false);
 
   const reasign = (val) => {
     valid.value = true;
@@ -20,5 +21,5 @@ export function useField(field) {
 
   watch(value, reasign);
 
-  return { value, valid };
+  return { value, valid, touched };
 }
