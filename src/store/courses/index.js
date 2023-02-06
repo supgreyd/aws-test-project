@@ -28,10 +28,13 @@ export const courses = {
           return Promise.resolve(course.data);
         },
         (error) => {
-          commit("fetchCourseFailure");
+          commit("clearCourse");
           return Promise.reject(error);
         }
       );
+    },
+    clearCourse({ commit }) {
+      commit("clearCourse");
     },
   },
 
@@ -45,7 +48,7 @@ export const courses = {
     fetchCourseSuccess(state, course) {
       state.course = course.data;
     },
-    fetchCourseFeilure(state) {
+    clearCourse(state) {
       state.course = null;
     },
   },

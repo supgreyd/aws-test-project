@@ -1,6 +1,6 @@
 <script>
 import { useStore } from "vuex";
-import { onMounted, computed } from "vue";
+import { onMounted, computed, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import AppImage from "@/components/common/AppImage/AppImage.vue";
 
@@ -19,6 +19,8 @@ export default {
     });
 
     const course = computed(() => store.getters["courses/GET_COURSE"]);
+
+    onUnmounted(() => store.dispatch("courses/clearCourse"));
 
     return { course };
   },

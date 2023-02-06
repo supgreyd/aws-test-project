@@ -2,7 +2,7 @@
 import AppButton from "@/components/common/AppButton/AppButton.vue";
 
 import { useStore } from "vuex";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { computed } from "vue";
 
 export default {
@@ -11,15 +11,20 @@ export default {
   setup() {
     const store = useStore();
     const router = useRouter();
+    const route = useRoute();
+
     const logout = () => {
       store.dispatch("auth/logout").then(() => {
         router.push("/login");
       });
     };
 
-    const user = computed(() => store.getters["auth/GET_USER"]);
+    const goBack = () => router.go(-1);
 
-    return { logout, user };
+    const user = computed(() => store.getters["auth/GET_USER"]);
+    const displayReturnBtn = computed(() => route.name === "course");
+
+    return { logout, goBack, displayReturnBtn, user };
   },
 };
 </script>
@@ -28,7 +33,10 @@ export default {
   <header class="bg-gray-800 p-3">
     <div class="container xl mx-auto px-6 flex justify-between items-center">
       <img src="@/assets/images/Logo.png" alt="logo" class="h-10" />
-      <div class="flex items-center">
+      <div v-if="displayReturnBtn" class="flex items-center">
+        <AppButton title="Return" @click="goBack" />
+      </div>
+      <div class="flex">
         <img
           :src="user?.avatar_url"
           alt="avatar"
