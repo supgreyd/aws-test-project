@@ -5,6 +5,7 @@ export const courses = {
 
   state: {
     courses: [],
+    cousre: null,
   },
 
   actions: {
@@ -20,6 +21,18 @@ export const courses = {
         }
       );
     },
+    fetchCourse({ commit }, id) {
+      return cousrseService.course(id).then(
+        (course) => {
+          commit("fetchCourseSuccess", course.data);
+          return Promise.resolve(course.data);
+        },
+        (error) => {
+          commit("fetchCourseFailure");
+          return Promise.reject(error);
+        }
+      );
+    },
   },
 
   mutations: {
@@ -29,11 +42,20 @@ export const courses = {
     fetchFeilure(state) {
       state.courses = [];
     },
+    fetchCourseSuccess(state, course) {
+      state.course = course.data;
+    },
+    fetchCourseFeilure(state) {
+      state.course = null;
+    },
   },
 
   getters: {
     GET_COURSES(state) {
       return state.courses;
+    },
+    GET_COURSE(state) {
+      return state.course;
     },
   },
 };

@@ -1,3 +1,9 @@
+<script>
+import CourseInfo from "@/components/entities/CourseInfo/CourseInfo.vue";
+export default {
+  components: { CourseInfo },
+};
+</script>
 <template>
-  <div>Course page</div>
+  <CourseInfo />
 </template>
