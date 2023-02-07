@@ -1,6 +1,6 @@
-# package
+# AWS test project
 
-This template should help get you started developing with Vue 3 in Vite.
+This is test project for AWS cerated with Vue3 and Vite
 
 ## Recommended IDE Setup
 
